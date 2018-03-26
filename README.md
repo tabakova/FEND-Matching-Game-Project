@@ -1,5 +1,9 @@
-Matching game rules
+﻿
 
+![enter image description here](https://lh3.googleusercontent.com/lv_HZT0xlmYWy5l18RdxZje6TuEnrjc80MedFjajeFS-FCLiNKjQR0jkauHhH8lSpmm1v41C2tWYFA "The matching game snapshot")
+
+
+## Matching game rules
 1. The cards in the deck are mixed.
 2. Choose any two cards.
 3. If the two cards match, they will stay opened.
@@ -8,8 +12,7 @@ Matching game rules
 6. The game is over when all the cards have been matched.
 
 
-How I created the Memory Game
+## How I created the Memory Game
 
 I used Vanilla JS to build this app, changed the html file a little and made some changes to the style too.
-
 
