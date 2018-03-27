@@ -8,7 +8,7 @@ let cards = [...card]
 console.log(cards);
 
 // variable moves
-let moves = 0;
+let moves = 1;
 let counter = document.querySelector(".moves");
 
 // variable stars
@@ -99,7 +99,7 @@ var showCard = function (){
 function openCard() {
     openedCards.push(this);
     var len = openedCards.length;
-    if(len === 2){
+    if(len === 2 | len === 1){
         countMoves();
         if(openedCards[0].type === openedCards[1].type){
             matched();
