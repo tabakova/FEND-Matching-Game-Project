@@ -17,9 +17,6 @@ const stars = document.querySelectorAll(".fa-star");
 // variable matchedCards
 let matchedCard = document.getElementsByClassName("match");
 
-// variable starsList
-let starsList = document.querySelectorAll(".stars li");
-
 // variable modal
 let modal = document.getElementById("modal-window");
 
@@ -29,6 +26,14 @@ const span = document.getElementsByClassName("close")[0];
 // opened cards array
 var openedCards = [];
 
+// variable hour
+let hour;
+
+// variable finalTime
+let finalTime;
+
+// variable closeModal
+let closeModal;
 
 // @description shuffles cards
 // @param {array}
@@ -117,12 +122,12 @@ function matched(){
 
 // description when match is not made
 function unmatched(){
-    openedCards[0].classList.add("unmatch");
-    openedCards[1].classList.add("unmatch");
+    openedCards[0].classList.add("unmatched");
+    openedCards[1].classList.add("unmatched");
     disable();
     setTimeout(function(){
-        openedCards[0].classList.remove("show", "open", "no-event","unmatch");
-        openedCards[1].classList.remove("show", "open", "no-event","unmatch");
+        openedCards[0].classList.remove("show", "open", "no-event", "unmatched");
+        openedCards[1].classList.remove("show", "open", "no-event", "unmatched");
         enable();
         openedCards = [];
     },1100);
@@ -183,14 +188,14 @@ var horologe = document.querySelector(".horologe");
 var interval;
 function startHorologe(){
     interval = setInterval(function(){
-        horologe.innerHTML = minute+"mins "+second+"secs";
-        second++;
+        horologe.innerHTML = minute + "mins " + second + "secs";
+        second ++;
         if(second == 60){
-            minute++;
-            second=0;
+            minute ++;
+            second = 0;
         }
         if(minute == 60){
-            hour++;
+            hour ++;
             minute = 0;
         }
     },1000);
@@ -199,7 +204,7 @@ function startHorologe(){
 
 // @description show modal and moves, time and rating
 function gameEnds(){
-    if (matchedCard.length == 16){
+    if (matchedCard.length === 16){
         clearInterval(interval);
         finalTime = horologe.innerHTML;
 
@@ -241,7 +246,7 @@ function startGame(){
 
 
 // Adds event listeners to each card
-for (var i = 0; i < cards.length; i++){
+for (var i = 0; i < cards.length; i ++){
     card = cards[i];
     card.addEventListener("click", showCard);
     card.addEventListener("click", openCard);
